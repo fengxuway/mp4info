@@ -1,12 +1,9 @@
-package main
+package mp4info
 
 import (
 	"bytes"
 	"encoding/binary"
-	"fmt"
 	"io"
-	"os"
-	"path/filepath"
 )
 
 // BoxHeader 信息头
@@ -14,18 +11,6 @@ type BoxHeader struct {
 	Size       uint32
 	FourccType [4]byte
 	Size64     uint64
-}
-
-func main() {
-	file, err := os.Open(os.Args[1])
-	if err != nil {
-		panic(err)
-	}
-	duration, err := GetMP4Duration(file)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(filepath.Base(os.Args[1]), duration)
 }
 
 // GetMP4Duration 获取视频时长，以秒计
