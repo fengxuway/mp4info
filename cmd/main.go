@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"mp4info"
 	"os"
 	"path/filepath"
+
+	"github.com/fengxuway/mp4info"
 )
 
 func main() {
